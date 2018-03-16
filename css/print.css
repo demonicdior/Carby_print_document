@@ -1,0 +1,488 @@
+@charset "UTF-8";
+/*-----------------------------------------------------------------------------------
+
+	Project Name: Carby || Admin System
+	Description: Printed Style
+	Author: 박현수
+	Email: demonicdior@icloud.com
+	Date: 2018. 03. 05
+
+-----------------------------------------------------------------------------------*/
+@import url('../fonts/Roboto/Roboto.css');
+@import url('../fonts/Noto_Sans/noto_sans.css');
+@import url('../fonts/Carby/Carby.css');
+
+
+/* ----------------------------------------------------------------
+    Basic Style
+-----------------------------------------------------------------*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    line-height: 1;
+    color: #555;
+    font-family: 'Roboto', 'Noto Sans', sans-serif;
+}
+
+h1 { font-size: 36px; }
+
+h2 { font-size: 30px; }
+
+h3 { font-size: 24px; }
+
+h4 { font-size: 18px; }
+
+h5 { font-size: 14px; }
+
+h6 { font-size: 12px; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+table thead {
+    display: table-header-group;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ----------------------------------------------------------------
+    Print Style
+-----------------------------------------------------------------*/
+
+
+@media print {
+    .container {
+        padding: 0;
+    }
+
+    .print-wrapper {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+
+    .print-wrapper .print-box {
+        page-break-after: always;
+        height: 100%;
+    }
+
+    .print-wrapper .print-box::after  {
+        display: none !important;
+    }
+
+    .print-wrapper .print-box:last-child {
+        page-break-after: auto;
+    }
+
+    table tr {
+        page-break-inside: avoid;
+    }
+}
+
+
+/* ----------------------------------------------------------------
+	Helper Class
+-----------------------------------------------------------------*/
+
+
+.clear {
+    clear: both;
+    display: block;
+    font-size: 0px;
+    height: 0px;
+    line-height: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+    display: block;
+    content: ' ';
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/* ----------------------------------------------------------------
+	Columns & Grid
+-----------------------------------------------------------------*/
+
+/* Gutter = 11.8px / 1% for 1180px*/
+.postcontent { width: 920px; }
+.postcontent.bothsidebar { width: 660px; }
+.sidebar { width: 240px; }
+.col_full { width: 100%; }
+.col_half { width: 49.5%; }
+.col_one_third { width: 32.6666666667%; }
+.col_two_third { width: 66.3333333333%; }
+.col_one_fourth { width: 24.25%; }
+.col_three_fourth { width: 74.75%; }
+.col_one_fifth { width: 19.2%; }
+.col_two_fifth { width: 39.6%; }
+.col_three_fifth { width: 59.4%; }
+.col_four_fifth { width: 79.8%; }
+.col_one_sixth { width: 15.8333333333%; }
+.col_five_sixth { width: 83.1666666667%; }
+body.stretched .container-fullwidth {
+    position: relative;
+    padding: 0 60px;
+    width: 100%;
+}
+
+.postcontent,
+.sidebar,
+.col_full,
+.col_half,
+.col_one_third,
+.col_two_third,
+.col_three_fourth,
+.col_one_fourth,
+.col_one_fifth,
+.col_two_fifth,
+.col_three_fifth,
+.col_four_fifth,
+.col_one_sixth,
+.col_five_sixth {
+    display: block;
+    position: relative;
+    margin-right: 1%;
+    float: left;
+}
+
+.postcontent,
+.sidebar { margin-right: 20px; }
+
+.col_full {
+    clear: both;
+    float: none;
+    margin-right: 0;
+}
+
+.postcontent.col_last,
+.sidebar.col_last { float: right; }
+
+.col_last {
+    margin-right: 0 !important;
+    clear: right;
+}
+
+ul.columns {
+    display: table;
+    width: 100%;
+}
+
+ul.columns li {
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 1%;
+}
+ul.columns.one_column li {
+    width: 100%;
+}
+ul.columns.two_column li {
+    width: 49.5%;
+}
+ul.columns.three_column li {
+    width: 32.6666666667%;
+}
+ul.columns.three_column li:nth-child(3n+0) {
+    margin-right: 0;
+}
+ul.columns.four_column li {
+    width: 24.25%;
+}
+ul.columns.four_column li:nth-child(4n+0) {
+    margin-right: 0;
+}
+ul.columns.five_column li {
+    width: 19.2%;
+}
+ul.columns.five_column li:nth-child(5n+0) {
+    margin-right: 0;
+}
+ul.columns.six_column li {
+    width: 15.8333333333%;
+}
+ul.columns.six_column li:nth-child(6n+0) {
+    margin-right: 0;
+}
+ul.columns.seven_column li {
+    width: 13.4285714286%;
+}
+ul.columns.seven_column li:nth-child(7n+0) {
+    margin-right: 0;
+}
+ul.columns.eight_column li {
+    width: 11.625%;
+}
+ul.columns.eight_column li:nth-child(8n+0) {
+    margin-right: 0;
+}
+ul.columns.nine_column li {
+    width: 10.2222222222%;
+}
+ul.columns.nine_column li:nth-child(9n+0) {
+    margin-right: 0;
+}
+ul.columns.ten_column li {
+    width: 9.1%;
+}
+ul.columns.ten_column li:nth-child(10n+0) {
+    margin-right: 0;
+}
+ul.columns.eleven_column li {
+    width: 8.1818181818%;
+}
+ul.columns.eleven_column li:nth-child(11n+0) {
+    margin-right: 0;
+}
+ul.columns.twelve_column li {
+    width: 7.4166666667%;
+}
+ul.columns.twelve_column li:nth-child(12n+0) {
+    margin-right: 0;
+}
+ul li:last-child {
+    margin-right: 0 !important;
+}
+
+
+
+/* ----------------------------------------------------------------
+    Layout
+-----------------------------------------------------------------*/
+
+.container {
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container::before,
+.container::after {
+    display: block;
+    content: ' ';
+}
+
+.container::after {
+    claer: both;
+}
+
+.print-wrapper {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.print-wrapper .print-box {
+    padding: 20px 0 0;
+}
+
+.print-wrapper .print-box::after {
+    display: block;
+    content: ' ';
+    margin: 100px auto;
+    width: 80%;
+    border-bottom: 1px solid #eee;
+}
+
+.print-wrapper .print-box:last-child::after{
+    display: none;
+}
+
+.print-wrapper .print-box .print-box-header  {
+    position: relative;
+    display: block;
+    color: #ec431f;
+    border-bottom: 2px solid #ec431f;
+}
+
+.print-wrapper .print-box .print-box-header::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: carby;
+    content: '\e902';
+    font-size: 22px;
+
+}
+
+.print-wrapper .print-box .print-box-header h4 {
+    margin: 0 0 10px;
+}
+
+
+.print-wrapper .print-box .print-box-body {
+    display: block;
+}
+
+.form_box {
+    position: relative;
+    display: block;
+    margin-top: 20px;
+}
+
+.row {
+    display: table;
+    width: 100%;
+}
+
+
+
+/* ----------------------------------------------------------------
+    Table
+-----------------------------------------------------------------*/
+
+
+.table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.table td > * {
+    vertical-align: middle !important;
+}
+/*
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td.th_style {
+    background-color: #eee !important;
+}
+*/
+
+
+
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > footer > tr > th,
+.table > footer > tr > td {
+    padding: 12px 10px;
+    font-size: 12px;
+}
+
+
+.table {
+    border-top: 2px solid #7E7E7E;
+}
+
+.table th,
+.table td {
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/*
+.table-bordered th,
+.table-bordered td {
+    border-top: 1px solid #ddd;
+}
+*/
+
+.table-modern th {
+    width: 180px;
+    padding-left: 30px !important;
+}
+
+
+.table-data td {
+    padding-left: 30px !important;
+}
+
+ul.list-number li {
+    list-style-type: decimal;
+    line-height: 1.6;
+    margin-left: 15px;
+}
+
+
+dl.bill-mordern {
+    position: relative;
+}
+
+dl.bill-mordern > dt {
+    position: absolute;
+    left: 0;
+    line-height: 2;
+}
+
+dl.bill-mordern > dd {
+    margin-left: 50%;
+    text-align: right;
+    line-height: 2;
+}
+
+dl.bill-mordern.bill-morder-total {
+    border-top: 1px dashed #eee;
+    padding-top: 12px;
+    font-weight: bold;
+}
+
+.notification {
+    margin-top: 40px;
+    font-size: 12px;
+}
+
+.notification dl {
+    position: relative;
+    line-height: 2;
+    margin: 30px 0;
+}
+
+.notification dl dt {
+    font-weight: bold;
+}
+
+.notification dl dd {
+    margin-left: 0;
+}
+
+.notification .signature {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+    border-top: 1px dashed #eee;
+    padding-top: 20px;
+}
+
+.notification .signature span:first-child {
+    margin: 0 40px;
+}
+
+.notification .signature span:last-child {
+    font-weight: normal;
+    font-size: 12px;
+}
